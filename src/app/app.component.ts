@@ -7,10 +7,4 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-  name: string = 'Marina';
-  value: number = 3834;
-
-  showName() {
-    console.log(this.name, this.value)
-  }
 }

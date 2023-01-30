@@ -1,0 +1,32 @@
+<div class="text-layout">
+    <h1>Decimal Pipes</h1>
+    <p>Pipes that are included in Angular - Common Module</p>
+
+</div>
+
+<div class="grid">
+    <div class="col">
+        <p-card
+            header="Number"
+            [subheader]="'Before: ' + netSales"
+        >
+            After: {{ netSales | number:'.2-2' }}
+        </p-card>
+    </div>
+    <div class="col">
+        <p-card
+            header="Currency"
+            [subheader]="'Before: ' + netSales"
+        >
+            After: {{ netSales | currency:'BRL':'symbol-narrow':'.4-4' }}
+        </p-card>
+    </div>
+    <div class="col">
+        <p-card
+            header="Percent"
+            [subheader]="'Before: ' + percentage"
+        >
+            After: {{ percentage | percent:'2.2-2' }}
+        </p-card>
+    </div>
+</div> 
