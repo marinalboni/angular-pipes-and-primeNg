@@ -16,14 +16,29 @@ export class NoCommunsComponent {
     'male': 'invitarlo',
     'female': 'invitarla'
   };
-
+  
   //i18nPlural
-  clientes: string[] = ['Maria', 'Pedro', 'Fabio'];
-
+  clientes: string[] = ['Maria', 'Pedro', 'Fabio', 'Jose', 'Adrian'];
+  
   clientMap = {
     '=0': 'no tenemos ningún cliente ',
     '=1': 'tenemos 1 cliente',
     'other': `tenemos # clientes`
+  };
+
+  //functions
+  changeUser() {
+    if(this.name === 'Fernanda') {
+      this.name = 'Juan';
+      this.gender = 'male';
+    } else {
+      this.name = 'Fernanda';
+      this.gender = 'female';
+    }
   }
+
+  deleteUser() {
+    this.clientes.pop()
+  };
 
 }
