@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { interval } from 'rxjs';
 
 @Component({
   selector: 'app-no-communs',
@@ -17,16 +18,6 @@ export class NoCommunsComponent {
     'female': 'invitarla'
   };
   
-  //i18nPlural
-  clientes: string[] = ['Maria', 'Pedro', 'Fabio', 'Jose', 'Adrian'];
-  
-  clientMap = {
-    '=0': 'no tenemos ningún cliente ',
-    '=1': 'tenemos 1 cliente',
-    'other': `tenemos # clientes`
-  };
-
-  //functions
   changeUser() {
     if(this.name === 'Fernanda') {
       this.name = 'Juan';
@@ -37,8 +28,27 @@ export class NoCommunsComponent {
     }
   }
 
+  //i18nPlural
+  clientes: string[] = ['Maria', 'Pedro', 'Fabio', 'Jose', 'Adrian'];
+  
+  clientMap = {
+    '=0': 'no tenemos ningún cliente ',
+    '=1': 'tenemos 1 cliente',
+    'other': `tenemos # clientes`
+  };
+
   deleteUser() {
     this.clientes.pop()
   };
+
+  //KeyValue & Json Pipe
+  person = {
+    name: 'Amanda',
+    age: 31,
+    address: 'Ottawa, Canadá'
+  };
+
+  //Async pipe
+  myObservable = interval(1000);
 
 }
