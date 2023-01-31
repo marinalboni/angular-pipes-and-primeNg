@@ -31,7 +31,8 @@ export class MenuComponent {
     },
     {
       label: 'Personalized Pipes',
-      icon: 'pi pi-cog'
+      icon: 'pi pi-cog',
+      routerLink: 'order'
     }
   ];
 }

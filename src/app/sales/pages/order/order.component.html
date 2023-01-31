@@ -1,1 +1,76 @@
-<p>order works!</p>
+<div class="text-layout">
+    <h1>Personalized Pipes</h1>
+    <p>Pipes that are NOT included in Angular</p>
+
+</div>
+
+<div class="grid">
+    <div class="col">
+        <p-card header="personalizedtouppercase">
+            <p> {{ textToChange | personalizeduppercase:doIWantUppercase }} </p>
+            <hr class="my-5">
+            <button
+            pButton
+            label="Toggle"
+            (click)="toggleText()"
+            class="p-button-info"
+            >
+            </button>
+        </p-card>
+    </div>
+</div>
+
+<div class="row mt-3">
+    <p-toolbar>
+        <div class="p-toolbar-group-start">
+        </div>
+    
+        <div class="p-toolbar-group-end">
+            <button
+                pButton
+                label="By name"
+                icon="pi pi-sort"
+                class="mr-1 p-button-success"
+                (click)="ordenarPor = 'name'"
+            >
+            </button>
+            <button
+                pButton
+                label="By flying skills"
+                icon="pi pi-sort"
+                class="mr-1"
+                (click)="ordenarPor = 'fly'"
+            >
+            </button>
+            <button
+                pButton
+                label="By color"
+                icon="pi pi-sort"
+                class="mr-1 p-button-help"
+                (click)="ordenarPor = 'color'"
+            >
+            </button>
+        </div>    
+    </p-toolbar>
+</div>
+
+
+<div class="row mt-2">
+    <p-table [value]=" heroes | order:ordenarPor">
+        <ng-template pTemplate="header">
+            <tr>
+                <th>Name</th>
+                <th>Can fly?</th>
+                <th>Color</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-heroe>
+            <tr>
+                <td>{{ heroe.name }}</td>
+                <td>{{ heroe.fly | personalizedcanfly }}</td>
+                <td>{{ heroe.color }}</td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>
+

@@ -5,6 +5,10 @@ import { NoCommunsComponent } from './pages/no-communs/no-communs.component';
 import { BasicsComponent } from './pages/basics/basics.component';
 import { OrderComponent } from './pages/order/order.component';
 import { PrimeNgModule } from '../prime-ng/prime-ng.module';
+import { PersonalizedUppercasePipe } from './pipes/uppercase.pipe';
+import { PersonalizedCanFlyPipe } from './pipes/canfly.pipe';
+import { OrderPipe } from './pipes/order.pipe';
+
 
 
 
@@ -13,7 +17,10 @@ import { PrimeNgModule } from '../prime-ng/prime-ng.module';
     NumbersComponent,
     NoCommunsComponent,
     BasicsComponent,
-    OrderComponent
+    OrderComponent,
+    PersonalizedUppercasePipe,
+    PersonalizedCanFlyPipe,
+    OrderPipe
   ],
   exports: [
     NumbersComponent,
